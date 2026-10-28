@@ -4,9 +4,12 @@
   "private": true,
   "description": "v1 prototype: recommends up to three fictional campus events based on interests and availability.",
   "scripts": {
-    "start": "serve . -l ${PORT:-3000}"
+    "start": "serve public -l ${PORT:-3000} --no-request-logging"
   },
   "dependencies": {
     "serve": "^14.2.4"
+  },
+  "overrides": {
+    "compression": "^1.8.2"
   }
 }
