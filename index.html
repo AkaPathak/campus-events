@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Screen 1: Preferences -->
+    <section id="screen-prefs" class="screen" aria-labelledby="prefs-title">
+      <header class="screen-header">
+        <h1 id="prefs-title">Find campus events</h1>
+        <p class="subtle">Tell us what you're into and when you're free. We'll suggest up to three events.</p>
+      </header>
+
+      <fieldset class="group">
+        <legend>Interests <span class="hint">optional</span></legend>
+        <div class="chips" id="interest-chips"></div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Days you're free <span class="hint">pick at least one</span></legend>
+        <div class="chips" id="day-chips"></div>
+      </fieldset>
+
+      <fieldset class="group">
+        <legend>Times you're free</legend>
+        <div class="chips" id="block-chips"></div>
+      </fieldset>
+
+      <div class="footer-bar">
+        <p class="hint" id="find-hint" aria-live="polite"></p>
+        <button type="button" class="btn-primary" id="find-btn">Find events</button>
+      </div>
+    </section>
+
+    <!-- Screen 2: Recommendations -->
+    <section id="screen-results" class="screen" aria-labelledby="results-title" hidden>
+      <header class="screen-header">
+        <button type="button" class="btn-link" data-nav="prefs">‹ Edit preferences</button>
+        <h1 id="results-title">Recommended for you</h1>
+        <p class="subtle" id="results-summary"></p>
+      </header>
+      <ul class="cards" id="results-list"></ul>
+      <div class="empty" id="results-empty" hidden>
+        <h2>No events at those times</h2>
+        <p>Nothing is scheduled on the days and times you picked. Try adding another day or time of day.</p>
+        <button type="button" class="btn-primary" data-nav="prefs">Edit preferences</button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Event details -->
+    <section id="screen-details" class="screen" aria-labelledby="details-title" hidden>
+      <header class="screen-header">
+        <button type="button" class="btn-link" data-nav="results">‹ Back to recommendations</button>
+      </header>
+      <article class="details">
+        <h1 id="details-title"></h1>
+        <p class="badge" id="details-badge" hidden>Saved</p>
+        <dl class="meta">
+          <dt>When</dt><dd id="details-when"></dd>
+          <dt>Where</dt><dd id="details-where"></dd>
+        </dl>
+        <p id="details-description"></p>
+        <ul class="tags" id="details-tags"></ul>
+      </article>
+      <div class="footer-bar">
+        <button type="button" class="btn-primary" id="save-btn" aria-pressed="false">Save event</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="events.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

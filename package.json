@@ -1,0 +1,12 @@
+{
+  "name": "campus-events",
+  "version": "1.0.0",
+  "private": true,
+  "description": "v1 prototype: recommends up to three fictional campus events based on interests and availability.",
+  "scripts": {
+    "start": "serve . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
